@@ -1,0 +1,2545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Oxygen+Mono&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+BE+VLG:wght@100..400&family=Playwrite+DK+Loopet:wght@100..400&family=Playwrite+GB+S+Guides:ital@0;1&family=Playwrite+NZ+Basic:wght@100..400&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Sometype+Mono:wght@400..700&family=Square+Peg&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <title>Store</title>
+
+    <style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; 
+  
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Navbar */
+
+.headerstore {
+    background-color: rgb(255, 248, 251);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e6cdd5;
+    position: relative;
+}
+
+/* جميع أزرار النافبار */
+
+.headerstore button {
+    background: none;
+    border: none;
+    color: rgb(22, 22, 21);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.headerstore button:hover {
+    font-size: 20px;
+}
+
+/* اسم المتجر */
+
+.store-name {
+    position: absolute;
+    left: 10px;
+    font-family: "Playwrite AU SA", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* أزرار الخيارات */
+
+.options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.options button {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    font-style: normal;
+    white-space: nowrap;
+}
+
+/* أيقونات السلة والبحث والقلب */
+
+.icons {
+    position: absolute;
+    right: 60px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icons img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+
+/* ===== HERO ===== */
+
+.hero {
+    width: 100%;
+    min-height: 680px;
+    padding: 35px 6%;
+    background: #f9f5f1;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+/* TEXT */
+
+.hero-text {
+    position: relative;
+    padding: 30px 0;
+    min-width: 0;
+}
+
+.hero-label {
+    display: block;
+    color: #a77b65;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+}
+
+.hero-text h1 {
+    margin: 0;
+    color: #292522;
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 5.2vw, 76px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -3px;
+}
+
+.hero-text .meet {
+    color: #b77d64;
+    font-family: "Playwrite AU SA", cursive;
+    font-size: 0.82em;
+    font-weight: 400;
+}
+
+.hero-text p {
+    max-width: 390px;
+    margin: 28px 0;
+    color: #77716d;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    line-height: 2;
+}
+
+/* BUTTON */
+
+.butt {
+    width: 225px;
+    height: 52px;
+    margin-top: 5px;
+    padding: 0 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #292522;
+    color: white;
+    border: 1px solid #292522;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.butt:hover {
+    background: #b77d64;
+    border-color: #b77d64;
+}
+
+/* BOTTOM DETAILS */
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    max-width: 390px;
+    margin-top: 75px;
+    padding-top: 15px;
+    border-top: 1px solid #dfd5ce;
+
+    color: #89817b;
+    font-family: "DM Sans", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* IMAGE */
+
+.ima {
+    width: 100%;
+    height: 590px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ima img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 35%;
+}
+
+/* IMAGE CAPTION */
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px;
+
+    display: flex;
+    justify-content: space-between;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.45)
+    );
+
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+
+/* ================= PRODUCTS SECTION ================= */
+
+.products-section {
+    width: 100%;
+    padding: 85px 6%;
+    background: #fffdfb;
+}
+
+/* Section Heading */
+
+.products-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.section-label {
+    color: #b77d64;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.products-heading h2 {
+    margin: 13px 0 8px;
+    color: #292522;
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 4vw, 45px);
+    font-weight: 400;
+}
+
+.products-heading h2 span {
+    color: #b77d64;
+}
+
+.products-heading p {
+    margin: 0;
+    color: #88817c;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+}
+
+.products-count {
+    padding-bottom: 5px;
+    color: #99918b;
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* Products Grid */
+
+.catygory {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Product Card */
+
+.product-card {
+    min-width: 0;
+    cursor: pointer;
+}
+
+/* Image */
+
+.product-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: #f3efeb;
+}
+
+.product-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.06);
+}
+
+/* Product Label */
+
+.product-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 8px 11px;
+
+    background: #fffdfb;
+    color: #292522;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+/* View Details */
+
+.view-details {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+
+    padding: 14px;
+    background: rgba(255, 253, 251, 0.95);
+    color: #292522;
+
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s ease;
+}
+
+.product-card:hover .view-details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Product Information */
+
+.product-info {
+    padding-top: 17px;
+}
+
+.product-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-title h3 {
+    margin: 0;
+    color: #292522;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.product-title span {
+    color: #292522;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.product-info p {
+    margin: 8px 0 0;
+    color: #99918b;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+}
+
+/* Cart Icon */
+
+.cart-icon-button {
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.cart-icon-button img {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+#cartCount {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #b77d64;
+    color: white;
+    font-size: 10px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cart Window */
+
+.cart-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.cart-modal.show {
+    display: flex;
+}
+
+.cart-content {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 30px;
+    background: #fff8fb;
+    border-radius: 12px;
+}
+
+.cart-content h2 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.close-cart {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Cart Product */
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #e6cdd5;
+}
+
+.cart-item img {
+    width: 85px;
+    height: 105px;
+    object-fit: cover;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h3 {
+    margin: 0 0 8px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+}
+
+.cart-item-info p {
+    margin: 5px 0;
+    color: #888;
+    font-size: 13px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.quantity-controls button {
+    width: 27px;
+    height: 27px;
+    border: 1px solid #d8c2ba;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.quantity-controls span {
+    font-size: 14px;
+}
+
+.remove-item {
+    border: none;
+    background: none;
+    color: #b77d64;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 22px;
+    margin-top: 15px;
+    border-top: 1px solid #e6cdd5;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 35px 10px;
+    color: #888;
+}
+
+/* خلفية النافذة */
+.product-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.55);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* إظهار النافذة */
+.product-modal.show {
+    display: flex;
+}
+
+/* محتوى النافذة */
+.modal-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 750px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    background: #fff8fb;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* صورة المنتج */
+.modal-image img {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+/* تفاصيل المنتج */
+.modal-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.modal-label {
+    color: #d68c6a;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.modal-details h2 {
+    margin: 15px 0 10px;
+    font-size: 25px;
+}
+
+.modal-details p {
+    color: #777;
+    line-height: 1.7;
+}
+
+.modal-details label {
+    margin: 12px 0 8px;
+}
+
+.modal-details select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e6cdd5;
+    background: white;
+    font-size: 14px;
+}
+
+.modal-price {
+    margin: 10px 0;
+}
+
+/* زر الإغلاق */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    z-index: 2;
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* زر الإضافة إلى السلة */
+.modal-cart-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    border: none;
+    background: #292522;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-cart-btn:hover {
+    background: #d68c6a;
+}
+
+
+
+/* ================= FOOTER ================= */
+
+.store-footer {
+    width: 100%;
+    background: #f7f1ec;
+    padding: 65px 6% 20px;
+    font-family: "DM Sans", sans-serif;
+}
+
+/* الجزء العلوي */
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 45px;
+    padding-bottom: 55px;
+}
+
+/* اسم المتجر */
+
+.footer-brand h2 {
+    margin: 0 0 18px;
+    color: #292522;
+    font-family: "Playwrite AU SA", cursive;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.footer-brand h2 span {
+    color: #b77d64;
+}
+
+.footer-brand p {
+    max-width: 270px;
+    color: #88817c;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* الروابط */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.footer-links h3 {
+    margin: 5px 0 12px;
+    color: #292522;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.footer-links a {
+    width: fit-content;
+    color: #88817c;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #b77d64;
+    transform: translateX(4px);
+}
+
+/* الجزء السفلي */
+
+.footer-bottom {
+    border-top: 1px solid #e3d8d0;
+    padding-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-bottom p,
+.footer-bottom span {
+    margin: 0;
+    color: #99918b;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+/* ================= OUR STORY ================= */
+
+.our-story {
+    width: 100%;
+    padding: 100px 8%;
+    background: #f7f1ec;
+display: none;
+
+   
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+}
+.our-story.active {
+    display: grid;
+}
+.story-back {
+    grid-column: 1 / -1;
+    width: fit-content;
+    padding: 10px 18px;
+    background: transparent;
+    border: 1px solid #b77d64;
+    color: #292522;
+    cursor: pointer;
+    font-family: "DM Sans", sans-serif;
+    transition: 0.3s;
+}
+
+.story-back:hover {
+    background: #b77d64;
+    color: white;
+}
+/* صورة القصة */
+
+.story-image {
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* نص القصة */
+
+.story-content {
+    max-width: 500px;
+}
+
+.story-label {
+    color: #b77d64;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.story-content h2 {
+    margin: 20px 0;
+    color: #292522;
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 4vw, 52px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.story-content h2 span {
+    display: block;
+    color: #b77d64;
+    font-style: italic;
+}
+
+.story-content p {
+    color: #817973;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 18px;
+}
+
+.story-signature {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #dfd2c9;
+}
+
+.story-signature span:first-child {
+    color: #292522;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.story-signature span:last-child {
+    color: #b77d64;
+    font-family: Georgia, serif;
+    font-size: 13px;
+}
+
+.mode-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.mode-button img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ================= DARK MODE ================= */
+
+body {
+    background: #fffdfb;
+    color: #292522;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar */
+
+body.dark-mode .headerstore {
+    background: #211c1a;
+    border-bottom-color: #493b35;
+}
+
+body.dark-mode .headerstore button {
+    color: #f5eee9;
+}
+
+/* Hero */
+
+body.dark-mode .hero {
+    background: #211c1a;
+}
+
+body.dark-mode .hero-text h1 {
+    color: #f5eee9;
+}
+
+body.dark-mode .hero-text p {
+    color: #c5b9b1;
+}
+
+body.dark-mode .hero-label {
+    color: #d6a58c;
+}
+
+body.dark-mode .hero-text .meet {
+    color: #d6a58c;
+}
+
+body.dark-mode .hero-bottom {
+    color: #b9aaa0;
+    border-top-color: #493b35;
+}
+
+/* Shop Button */
+
+body.dark-mode .butt {
+    background: #d6a58c;
+    color: #211c1a;
+    border-color: #d6a58c;
+}
+
+/* Products */
+
+body.dark-mode .products-section {
+    background: #181513;
+}
+
+body.dark-mode .products-heading h2 {
+    color: #f5eee9;
+}
+
+body.dark-mode .products-heading p {
+    color: #b9aaa0;
+}
+
+body.dark-mode .section-label,
+body.dark-mode .products-heading h2 span {
+    color: #d6a58c;
+}
+
+body.dark-mode .products-count {
+    color: #b9aaa0;
+}
+
+body.dark-mode .product-image {
+    background: #29221e;
+}
+
+body.dark-mode .product-tag {
+    background: #29221e;
+    color: #f5eee9;
+}
+
+body.dark-mode .view-details {
+    background: rgba(33, 28, 26, 0.95);
+    color: #f5eee9;
+}
+
+body.dark-mode .product-title h3,
+body.dark-mode .product-title span {
+    color: #f5eee9;
+}
+
+body.dark-mode .product-info p {
+    color: #b9aaa0;
+}
+
+/* Cart */
+
+body.dark-mode .cart-content {
+    background: #211c1a;
+    color: #f5eee9;
+}
+
+body.dark-mode .cart-content h2,
+body.dark-mode .cart-item-info h3 {
+    color: #f5eee9;
+}
+
+body.dark-mode .cart-item-info p {
+    color: #c5b9b1;
+}
+
+body.dark-mode .cart-item {
+    border-bottom-color: #493b35;
+}
+
+body.dark-mode .quantity-controls button {
+    background: #332a26;
+    color: #f5eee9;
+    border-color: #655047;
+}
+
+body.dark-mode .cart-total {
+    border-top-color: #493b35;
+    color: #f5eee9;
+}
+
+body.dark-mode .empty-cart {
+    color: #c5b9b1;
+}
+
+body.dark-mode .close-cart {
+    color: #f5eee9;
+}
+
+/* Product Modal */
+
+body.dark-mode .modal-content {
+    background: #211c1a;
+    color: #f5eee9;
+}
+
+body.dark-mode .modal-details h2,
+body.dark-mode .modal-details h3,
+body.dark-mode .modal-details label {
+    color: #f5eee9;
+}
+
+body.dark-mode .modal-details p {
+    color: #c5b9b1;
+}
+
+body.dark-mode .modal-details select {
+    background: #332a26;
+    color: #f5eee9;
+    border-color: #655047;
+}
+
+body.dark-mode .close-modal {
+    color: #f5eee9;
+}
+
+body.dark-mode .modal-cart-btn {
+    background: #d6a58c;
+    color: #211c1a;
+}
+
+/* Our Story */
+
+body.dark-mode .our-story {
+    background: #211c1a;
+}
+
+body.dark-mode .story-content h2 {
+    color: #f5eee9;
+}
+
+body.dark-mode .story-content h2 span {
+    color: #d6a58c;
+}
+
+body.dark-mode .story-content p {
+    color: #c5b9b1;
+}
+
+body.dark-mode .story-signature {
+    border-top-color: #493b35;
+}
+
+body.dark-mode .story-signature span:first-child {
+    color: #f5eee9;
+}
+
+body.dark-mode .story-signature span:last-child {
+    color: #d6a58c;
+}
+
+body.dark-mode .story-back {
+    color: #f5eee9;
+    border-color: #d6a58c;
+}
+
+/* Footer */
+
+body.dark-mode .store-footer {
+    background: #181513;
+}
+
+body.dark-mode .footer-brand h2,
+body.dark-mode .footer-links h3 {
+    color: #f5eee9;
+}
+
+body.dark-mode .footer-brand h2 span {
+    color: #d6a58c;
+}
+
+body.dark-mode .footer-brand p,
+body.dark-mode .footer-links a {
+    color: #b9aaa0;
+}
+
+body.dark-mode .footer-links a:hover {
+    color: #d6a58c;
+}
+
+body.dark-mode .footer-bottom {
+    border-top-color: #493b35;
+}
+
+body.dark-mode .footer-bottom p,
+body.dark-mode .footer-bottom span {
+    color: #b9aaa0;
+}
+
+/* Theme Button */
+
+.mode-button img {
+    transition: transform 0.3s ease;
+}
+
+.mode-button:hover img {
+    transform: rotate(25deg);
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+   iPhone - Samsung - iPad - Laptop
+===================================== */
+
+/* الصور والعناصر */
+img {
+    max-width: 100%;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* منع تجاوز عرض الشاشة */
+body {
+    overflow-x: hidden;
+}
+
+.page {
+    width: 100%;
+    overflow-x: clip;
+}
+
+/* =====================================
+   LARGE SCREENS
+   Desktop - Laptop
+===================================== */
+
+@media (min-width: 1200px) {
+
+    .hero {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .ima {
+        height: 590px;
+    }
+
+    .catygory {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .products-section {
+        padding: 85px 7%;
+    }
+
+}
+
+/* =====================================
+   MEDIUM SCREENS
+   iPad - Tablet
+===================================== */
+
+@media (min-width: 761px) and (max-width: 1199px) {
+
+    /* Navbar */
+
+    .headerstore {
+        height: 60px;
+    }
+
+    .store-name {
+        left: 12px;
+        font-size: 15px;
+    }
+
+    .options {
+        gap: 12px;
+    }
+
+    .options button {
+        font-size: 13px;
+    }
+
+    .icons {
+        right: 12px;
+        gap: 8px;
+    }
+
+    .icons img {
+        width: 19px;
+        height: 19px;
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        padding: 45px 4%;
+    }
+
+    .hero-text {
+        padding: 15px 0;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(38px, 5vw, 55px);
+        letter-spacing: -2px;
+    }
+
+    .hero-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+    }
+
+    .hero-text p {
+        font-size: 13px;
+    }
+
+    .hero-bottom {
+        margin-top: 40px;
+        gap: 10px;
+        font-size: 8px;
+    }
+
+    .ima {
+        width: 100%;
+        height: 460px;
+        max-width: none;
+    }
+
+    /* Products */
+
+    .products-section {
+        padding: 65px 4%;
+    }
+
+    .catygory {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 20px;
+    }
+
+    .product-title h3 {
+        font-size: 14px;
+    }
+
+    /* Product Modal */
+
+    .modal-content {
+        max-width: 680px;
+        gap: 20px;
+        padding: 25px;
+    }
+
+    .modal-image img {
+        height: 330px;
+    }
+
+    /* Our Story */
+
+    .our-story {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 65px 5%;
+    }
+
+    .story-image {
+        height: 400px;
+    }
+
+    /* Footer */
+
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+
+}
+
+/* =====================================
+   SMALL SCREENS
+   Large phones
+===================================== */
+
+@media (max-width: 760px) {
+
+    /* Navbar */
+
+    .headerstore {
+        height: auto;
+        min-height: 85px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 45px 35px;
+        justify-content: stretch;
+        align-items: center;
+        padding: 0 12px;
+    }
+
+    .store-name {
+        position: static;
+        justify-self: start;
+        font-size: 15px !important;
+        padding: 0;
+    }
+
+    .icons {
+        position: static;
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        gap: 12px;
+    }
+
+    .icons img {
+        width: 19px;
+        height: 19px;
+    }
+
+    .cart-icon-button img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .options {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-content: center;
+        gap: clamp(12px, 4vw, 25px);
+        width: 100%;
+        margin: 0;
+    }
+
+    .options button {
+        font-size: 12px;
+        padding: 5px 0;
+    }
+
+    .headerstore button:hover {
+        font-size: inherit;
+    }
+
+    /* Hero */
+
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 35px 20px;
+        gap: 25px;
+    }
+
+    .hero-text {
+        width: 100%;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .hero-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-bottom: 22px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(38px, 8vw, 55px);
+        line-height: 1.2;
+        letter-spacing: -2px;
+    }
+
+    .hero-text p {
+        max-width: 100%;
+        font-size: 13px;
+        line-height: 1.9;
+        margin: 20px 0;
+    }
+
+    .butt {
+        width: 200px;
+        min-height: 45px;
+        margin-top: 15px;
+    }
+
+    .hero-bottom {
+        max-width: 100%;
+        margin-top: 35px;
+        font-size: 8px;
+    }
+
+    .ima {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+
+    .ima img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image-caption {
+        padding: 15px;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    /* Products */
+
+    .products-section {
+        padding: 50px 20px;
+    }
+
+    .products-heading {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 28px;
+    }
+
+    .products-heading h2 {
+        font-size: clamp(28px, 6vw, 36px);
+    }
+
+    .products-heading p {
+        font-size: 12px;
+    }
+
+    .catygory {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 13px;
+    }
+
+    .product-tag {
+        top: 8px;
+        left: 8px;
+        padding: 6px 7px;
+        font-size: 8px;
+    }
+
+    .product-info {
+        padding-top: 12px;
+    }
+
+    .product-title {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .product-title h3 {
+        font-size: 12px;
+    }
+
+    .product-title span {
+        font-size: 11px;
+    }
+
+    .product-info p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .view-details {
+        display: none;
+    }
+
+    /* Product Modal */
+
+    .product-modal {
+        padding: 12px;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: 430px;
+        max-height: 92vh;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .modal-image img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+    }
+
+    .modal-details h2 {
+        font-size: 21px;
+    }
+
+    .modal-details p {
+        font-size: 13px;
+    }
+
+    .modal-cart-btn {
+        margin-top: 12px;
+    }
+
+    /* Cart */
+
+    .cart-modal {
+        padding: 12px;
+    }
+
+    .cart-content {
+        width: 100%;
+        max-width: 500px;
+        max-height: 88vh;
+        padding: 25px 18px;
+    }
+
+    .cart-item {
+        gap: 10px;
+    }
+
+    .cart-item img {
+        width: 65px;
+        height: 85px;
+    }
+
+    .cart-item-info h3 {
+        font-size: 13px;
+    }
+
+    .quantity-controls {
+        gap: 9px;
+    }
+
+    /* Our Story */
+
+    .our-story {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 45px 20px;
+    }
+
+    .story-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+
+    .story-content {
+        max-width: 100%;
+    }
+
+    .story-content h2 {
+        font-size: clamp(32px, 7vw, 42px);
+    }
+
+    .story-content p {
+        font-size: 13px;
+    }
+
+    /* Footer */
+
+    .store-footer {
+        padding: 45px 20px 20px;
+    }
+
+    .footer-top {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+}
+
+/* =====================================
+   EXTRA SMALL PHONES
+   iPhone SE - Small Samsung
+===================================== */
+
+@media (max-width: 380px) {
+
+    .headerstore {
+        padding: 0 8px;
+    }
+
+    .store-name {
+        font-size: 13px !important;
+    }
+
+    .options {
+        gap: 10px;
+    }
+
+    .options button {
+        font-size: 10px;
+    }
+
+    .icons {
+        gap: 8px;
+    }
+
+    .icons img {
+        width: 17px;
+        height: 17px;
+    }
+
+    .hero {
+        padding: 28px 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .products-section {
+        padding: 40px 12px;
+    }
+
+    .catygory {
+        gap: 23px 10px;
+    }
+
+    .product-title h3 {
+        font-size: 11px;
+    }
+
+    .product-title span {
+        font-size: 10px;
+    }
+
+    .cart-content {
+        padding: 22px 12px;
+    }
+
+    .cart-item img {
+        width: 55px;
+        height: 75px;
+    }
+
+    .footer-top {
+        gap: 25px 12px;
+    }
+
+    .footer-links a {
+        font-size: 11px;
+    }
+
+}
+
+/* =====================================
+   LANDSCAPE PHONES
+===================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .hero {
+        grid-template-columns: 1fr 1fr;
+        padding: 25px 4%;
+    }
+
+    .ima {
+        height: 350px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .product-modal,
+    .cart-modal {
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .modal-content,
+    .cart-content {
+        max-height: none;
+    }
+
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <div class="headerstore">
+
+            <!-- اسم المتجر -->
+
+            <button class="store-name">
+                styles store
+            </button>
+
+            <!-- الخياران في المنتصف -->
+
+<div class="options">
+  
+    <button class="Shop">Shop</button>
+    <button class="NewArr">New Arrivals</button>
+   <button id="ourStoryBtn">Our Story</button>
+</div>
+
+<div class="icons">
+  <button class="cart-icon-button" id="cartIcon">
+    <img src="shopping-bag.png" alt="Shopping bag">
+    <span id="cartCount">0</span>
+</button>
+    <img src="search-code.png" alt="Search">
+ <button id="modeBtn" class="mode-button">
+    <img src="sun.png" alt="Change Theme">
+</button>
+</div>
+           
+
+        </div>
+
+        <!-- قسم الصورة -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <span class="hero-label">
+            THE NEW COLLECTION — 2026
+        </span>
+
+        <h1>
+            Where Style<br>
+            <span class="meet">Meets</span><br>
+            Sophistication.
+        </h1>
+
+        <p>
+            Discover timeless pieces designed for the modern woman.
+            Elevate your everyday style with carefully selected
+            fashion essentials.
+        </p>
+
+      <button class="butt" id="shopNowBtn">
+    SHOP THE COLLECTION <span>↗</span>
+</button>
+
+        <div class="hero-bottom">
+            <span>01 / 03</span>
+            <span>NEW SEASON · NEW STYLE</span>
+        </div>
+
+    </div>
+
+    <div class="ima">
+
+        <img src="aiony-haust-IXYxqP4zejo-unsplash.jpg"
+             alt="New fashion collection">
+
+        <div class="image-caption">
+            <span>THE ART OF DRESSING</span>
+            <span>2026 COLLECTION</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="products-section" id="products">
+
+    <div class="products-heading">
+        <div>
+            <span class="section-label">OUR SELECTION</span>
+            <h2>Curated for You<span>.</span></h2>
+            <p>Discover pieces that define your personal style.</p>
+        </div>
+
+        <span class="products-count">01 — 04 / COLLECTION</span>
+    </div>
+
+    <div class="catygory">
+
+        <div class="product-card" data-product="autumn">
+
+            <div class="product-image">
+                <img src="edward-howell-EAWKyzfXw44-unsplash.jpg"
+                     alt="Autumn Chic">
+
+                <span class="product-tag">NEW ARRIVAL</span>
+                <span class="view-details">VIEW DETAILS ↗</span>
+            </div>
+
+            <div class="product-info">
+                <div class="product-title">
+                    <h3>Autumn Chic</h3>
+                    <span>$45.00</span>
+                </div>
+                <p>Bold colors for a stylish look.</p>
+            </div>
+
+        </div>
+
+
+        <div class="product-card" data-product="emerald">
+
+            <div class="product-image">
+                <img src="ahmad-ebadi-ot28ybNQ-Is-unsplash.jpg"
+                     alt="Emerald Elegance">
+
+                <span class="product-tag">BESTSELLER</span>
+                <span class="view-details">VIEW DETAILS ↗</span>
+            </div>
+
+            <div class="product-info">
+                <div class="product-title">
+                    <h3>Emerald Elegance</h3>
+                    <span>$55.00</span>
+                </div>
+                <p>Elegant green blazer.</p>
+            </div>
+
+        </div>
+
+
+        <div class="product-card" data-product="purple">
+
+            <div class="product-image">
+                <img src="adele-shafiee-vagr_XT9Cms-unsplash.jpg"
+                     alt="Purple Street Style">
+
+                <span class="product-tag">NEW ARRIVAL</span>
+                <span class="view-details">VIEW DETAILS ↗</span>
+            </div>
+
+            <div class="product-info">
+                <div class="product-title">
+                    <h3>Purple Street Style</h3>
+                    <span>$40.00</span>
+                </div>
+                <p>Modern and casual.</p>
+            </div>
+
+        </div>
+
+
+        <div class="product-card" data-product="streetwear">
+
+            <div class="product-image">
+                <img src="max-titov-Mhktr6dFD3I-unsplash.jpg"
+                     alt="Autumn Streetwear">
+
+                <span class="product-tag">TRENDING</span>
+                <span class="view-details">VIEW DETAILS ↗</span>
+            </div>
+
+            <div class="product-info">
+                <div class="product-title">
+                    <h3>Autumn Streetwear</h3>
+                    <span>$50.00</span>
+                </div>
+                <p>Trendy autumn fashion.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- نافذة تفاصيل المنتج -->
+<div class="product-modal" id="productModal">
+
+    <div class="modal-content">
+
+        <button class="close-modal" id="closeModal" aria-label="Close">
+            &times;
+        </button>
+
+        <div class="modal-image">
+            <img id="modalImage" src="" alt="">
+        </div>
+
+        <div class="modal-details">
+            <span class="modal-label">PRODUCT DETAILS</span>
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalDescription"></p>
+
+            <h3 id="modalPrice"></h3>
+
+            <label for="productSize">Select Size</label>
+
+            <select id="productSize">
+                <option value="">Choose a size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+
+            <button id="addToCartBtn" class="modal-cart-btn">
+                ADD TO CART
+            </button>
+        </div>
+
+    </div>
+    
+</div>
+
+  
+<!-- CART MODAL -->
+
+<div class="cart-modal" id="cartModal">
+
+    <div class="cart-content">
+
+        <button class="close-cart" id="closeCart">
+            &times;
+        </button>
+
+        <h2>Shopping Cart</h2>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-total">
+            <span>Total:</span>
+            <strong id="cartTotal">$0.00</strong>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= OUR STORY ================= -->
+
+<section class="our-story" id="ourStory">
+
+    <div class="story-image">
+        <img src="aiony-haust-IXYxqP4zejo-unsplash.jpg"
+             alt="Styles Store fashion">
+    </div>
+
+    <div class="story-content">
+
+        <span class="story-label">OUR STORY</span>
+
+        <h2>
+            More Than Fashion.
+            <span>A Way of Life.</span>
+        </h2>
+
+        <p>
+            Styles Store was created from a love of timeless
+            fashion and effortless elegance.
+        </p>
+
+        <p>
+            We believe that style is more than what you wear.
+            It is a reflection of your personality, confidence,
+            and the little details that make you unique.
+        </p>
+
+        <p>
+            Our collection brings together carefully selected
+            pieces designed to make every woman feel confident,
+            beautiful, and effortlessly stylish.
+        </p>
+
+        <div class="story-signature">
+            <span>STYLE IS PERSONAL.</span>
+            <span>— STYLES STORE</span>
+        </div>
+
+    </div>
+   <button class="story-back" id="storyBack">
+        ← Back to Store
+    </button>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="store-footer">
+
+    <div class="footer-top">
+
+        <!-- اسم المتجر -->
+        <div class="footer-brand">
+            <h2>styles store<span>.</span></h2>
+
+            <p>
+                Discover timeless fashion pieces
+                designed to make every moment stylish.
+            </p>
+        </div>
+
+        <!-- روابط المتجر -->
+        <div class="footer-links">
+            <h3>EXPLORE</h3>
+
+            <a href="#">Home</a>
+            <a href="#products">Shop Collection</a>
+            <a href="#">Our Story</a>
+        </div>
+
+        <!-- خدمة العملاء -->
+        <div class="footer-links">
+            <h3>CUSTOMER CARE</h3>
+
+            <a href="#">Contact Us</a>
+            <a href="#">Shipping Information</a>
+            <a href="#">Returns & Exchanges</a>
+        </div>
+
+        <!-- التواصل الاجتماعي -->
+        <div class="footer-links">
+            <h3>FOLLOW US</h3>
+
+            <a href="#">Instagram ↗</a>
+            <a href="#">Pinterest ↗</a>
+            <a href="#">Facebook ↗</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>© 2026 Styles Store. All rights reserved.</p>
+
+        <span>Designed with elegance.</span>
+
+    </div>
+
+</footer>
+
+<script>
+ 
+// ================= PRODUCT DATA =================
+
+const productPrices = {
+    autumn: "$45.00",
+    emerald: "$55.00",
+    purple: "$40.00",
+    streetwear: "$50.00"
+};
+
+
+// ================= PRODUCT MODAL =================
+
+const productModal = document.getElementById("productModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const modalPrice = document.getElementById("modalPrice");
+
+const closeModal = document.getElementById("closeModal");
+const productSize = document.getElementById("productSize");
+const addToCartBtn = document.getElementById("addToCartBtn");
+
+let selectedProduct = null;
+
+
+// فتح تفاصيل المنتج
+
+document.querySelectorAll(".product-card").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const productId = card.dataset.product;
+
+        const image = card.querySelector("img");
+        const title = card.querySelector("h3");
+        const description = card.querySelector("p");
+
+        selectedProduct = {
+            id: productId,
+            name: title.textContent,
+            description: description.textContent,
+            image: image.getAttribute("src"),
+            price: productPrices[productId]
+        };
+
+        modalImage.src = selectedProduct.image;
+        modalImage.alt = selectedProduct.name;
+
+        modalTitle.textContent = selectedProduct.name;
+        modalDescription.textContent = selectedProduct.description;
+        modalPrice.textContent = selectedProduct.price;
+
+        productSize.value = "";
+
+        productModal.classList.add("show");
+
+    });
+
+});
+
+
+// إغلاق تفاصيل المنتج
+
+closeModal.addEventListener("click", () => {
+    productModal.classList.remove("show");
+});
+
+productModal.addEventListener("click", event => {
+
+    if (event.target === productModal) {
+        productModal.classList.remove("show");
+    }
+
+});
+
+
+// ================= SHOPPING CART =================
+
+// عناصر السلة
+
+const cartIcon = document.getElementById("cartIcon");
+const cartModal = document.getElementById("cartModal");
+const closeCart = document.getElementById("closeCart");
+
+const cartItems = document.getElementById("cartItems");
+const cartCount = document.getElementById("cartCount");
+const cartTotal = document.getElementById("cartTotal");
+
+
+// قراءة السلة المحفوظة
+
+let cart = [];
+
+try {
+    cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (!Array.isArray(cart)) {
+        cart = [];
+    }
+
+} catch (error) {
+    cart = [];
+}
+
+
+// تحويل السعر إلى رقم
+
+function getPrice(price) {
+
+    return Number(String(price).replace(/[^0-9.]/g, ""));
+
+}
+
+
+// ================= UPDATE CART =================
+
+function updateCart() {
+
+    cartItems.innerHTML = "";
+
+    let total = 0;
+    let count = 0;
+
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML =
+            '<p class="empty-cart">Your cart is empty 🛒</p>';
+
+    }
+
+
+    cart.forEach((item, index) => {
+
+        item.quantity = Number(item.quantity) || 1;
+
+        const price = getPrice(item.price);
+
+        total += price * item.quantity;
+        count += item.quantity;
+
+
+        cartItems.innerHTML += `
+
+            <div class="cart-item">
+
+                <img src="${item.image}" alt="${item.name}">
+
+                <div class="cart-item-info">
+
+                    <h3>${item.name}</h3>
+
+                    <p>Size: ${item.size}</p>
+
+                    <p>Price: ${item.price}</p>
+
+                    <div class="quantity-controls">
+
+                        <button data-action="minus" data-index="${index}">
+                            -
+                        </button>
+
+                        <span>${item.quantity}</span>
+
+                        <button data-action="plus" data-index="${index}">
+                            +
+                        </button>
+
+                    </div>
+
+                    <button class="remove-item"
+                        data-action="remove"
+                        data-index="${index}">
+                        Remove
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    cartCount.textContent = count;
+
+    cartTotal.textContent = "$" + total.toFixed(2);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+}
+
+
+// ================= ADD TO CART =================
+
+addToCartBtn.addEventListener("click", () => {
+
+    if (!selectedProduct) return;
+
+
+    if (productSize.value === "") {
+
+        alert("Please select a size first.");
+
+        return;
+
+    }
+
+
+    const existingProduct = cart.find(item =>
+
+        item.id === selectedProduct.id &&
+        item.size === productSize.value
+
+    );
+
+
+    if (existingProduct) {
+
+        existingProduct.quantity++;
+
+    } else {
+
+        cart.push({
+
+            id: selectedProduct.id,
+            name: selectedProduct.name,
+            image: selectedProduct.image,
+            price: selectedProduct.price,
+            size: productSize.value,
+            quantity: 1
+
+        });
+
+    }
+
+
+    updateCart();
+
+    productModal.classList.remove("show");
+
+    alert("Product added to cart!");
+
+});
+
+
+// ================= OPEN CART =================
+
+cartIcon.addEventListener("click", () => {
+
+    updateCart();
+
+    cartModal.classList.add("show");
+
+});
+
+
+// ================= CLOSE CART =================
+
+closeCart.addEventListener("click", () => {
+
+    cartModal.classList.remove("show");
+
+});
+
+
+cartModal.addEventListener("click", event => {
+
+    if (event.target === cartModal) {
+
+        cartModal.classList.remove("show");
+
+    }
+
+});
+
+
+// ================= QUANTITY AND REMOVE =================
+
+// التعامل مع أزرار + و - والحذف
+
+cartItems.addEventListener("click", event => {
+
+    const button = event.target.closest("button[data-action]");
+
+    if (!button) return;
+
+
+    const index = Number(button.dataset.index);
+
+    const action = button.dataset.action;
+
+
+    if (action === "plus") {
+
+        cart[index].quantity++;
+
+    }
+
+
+    if (action === "minus") {
+
+        cart[index].quantity--;
+
+        if (cart[index].quantity <= 0) {
+
+            cart.splice(index, 1);
+
+        }
+
+    }
+
+
+    if (action === "remove") {
+
+        cart.splice(index, 1);
+
+    }
+
+
+    updateCart();
+
+});
+
+const shopNowBtn = document.getElementById("shopNowBtn");
+
+shopNowBtn.addEventListener("click", () => {
+
+    document.getElementById("products").scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
+// الانتقال إلى قصة المتجر
+const ourStoryBtn = document.getElementById("ourStoryBtn");
+const storySection = document.getElementById("ourStory");
+const storyBack = document.getElementById("storyBack");
+
+const productsSection = document.querySelector(".products-section");
+const heroSection = document.querySelector(".hero");
+const footerSection = document.querySelector(".store-footer");
+
+// عند الضغط على Our Story
+
+ourStoryBtn.addEventListener("click", () => {
+
+    heroSection.style.display = "none";
+    productsSection.style.display = "none";
+    footerSection.style.display = "none";
+
+    storySection.classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+// عند الضغط على Back to Store
+
+storyBack.addEventListener("click", () => {
+
+    storySection.classList.remove("active");
+
+    heroSection.style.display = "";
+    productsSection.style.display = "";
+    footerSection.style.display = "";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+const modeBtn = document.getElementById("modeBtn");
+
+// استرجاع الوضع المحفوظ
+if (localStorage.getItem("mode") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+
+// تبديل الوضع عند الضغط
+modeBtn.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("mode", "dark");
+    } else {
+        localStorage.setItem("mode", "light");
+    }
+
+});
+
+// ================= NAVBAR BUTTONS =================
+
+const shopButton = document.querySelector(".Shop");
+const newArrButton = document.querySelector(".NewArr");
+
+const allProducts = document.querySelectorAll(".product-card");
+
+const autumnProduct = document.querySelector(
+    '.product-card[data-product="autumn"]'
+);
+
+// إظهار جميع المنتجات
+function showAllProducts() {
+
+    storySection.classList.remove("active");
+
+    heroSection.style.display = "";
+    productsSection.style.display = "";
+    footerSection.style.display = "";
+
+    allProducts.forEach(card => {
+        card.style.display = "";
+    });
+
+    productsSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+// زر SHOP
+shopButton.addEventListener("click", () => {
+
+    showAllProducts();
+
+});
+
+// زر NEW ARRIVALS
+newArrButton.addEventListener("click", () => {
+
+    storySection.classList.remove("active");
+
+    heroSection.style.display = "none";
+    footerSection.style.display = "none";
+
+    productsSection.style.display = "";
+
+    // إخفاء جميع المنتجات
+    allProducts.forEach(card => {
+        card.style.display = "none";
+    });
+
+    // إظهار المنتج الأول فقط
+    autumnProduct.style.display = "";
+
+    autumnProduct.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+
+
+// ================= INITIAL UPDATE =================
+
+updateCart();
+
+</script>
+</body>
+
+</html>
