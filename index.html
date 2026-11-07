@@ -99,47 +99,64 @@ body {
     cursor: pointer;
 }
 
-
-/* ===== HERO ===== */
+/* =====================================
+   NEW LUXURY HERO DESIGN
+===================================== */
 
 .hero {
     width: 100%;
-    min-height: 680px;
-    padding: 35px 6%;
-    background: #f9f5f1;
+    min-height: 650px;
+    padding: 0 6% 0 7%;
 
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
-    gap: 55px;
+    gap: 0;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            105deg,
+            #f7f0eb 0%,
+            #f7f0eb 43%,
+            #f3eae4 75%,
+            #f1e7e0 100%
+        );
 }
 
-/* TEXT */
+/* TEXT SIDE */
 
 .hero-text {
     position: relative;
-    padding: 30px 0;
+    z-index: 2;
+
     min-width: 0;
+    padding: 45px 0 55px;
 }
 
 .hero-label {
     display: block;
+
     color: #a77b65;
     font-family: "DM Sans", sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 3px;
-    margin-bottom: 35px;
+
+    margin-bottom: 28px;
 }
 
 .hero-text h1 {
     margin: 0;
+
     color: #292522;
     font-family: Georgia, serif;
-    font-size: clamp(48px, 5.2vw, 76px);
+    font-size: clamp(43px, 5.2vw, 76px);
     font-weight: 400;
-    line-height: 1.12;
-    letter-spacing: -3px;
+    line-height: 1.13;
+    letter-spacing: -2.5px;
 }
 
 .hero-text .meet {
@@ -151,10 +168,12 @@ body {
 
 .hero-text p {
     max-width: 390px;
-    margin: 28px 0;
+
+    margin: 25px 0;
+
     color: #77716d;
     font-family: "DM Sans", sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 2;
 }
 
@@ -162,8 +181,8 @@ body {
 
 .butt {
     width: 225px;
-    height: 52px;
-    margin-top: 5px;
+    height: 50px;
+    margin-top: 8px;
     padding: 0 18px;
 
     display: flex;
@@ -175,8 +194,9 @@ body {
     border: 1px solid #292522;
 
     font-family: "DM Sans", sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 1px;
+
     cursor: pointer;
     transition: 0.3s;
 }
@@ -191,57 +211,251 @@ body {
 .hero-bottom {
     display: flex;
     justify-content: space-between;
-    max-width: 390px;
-    margin-top: 75px;
-    padding-top: 15px;
+
+    max-width: 350px;
+    margin-top: 45px;
+    padding-top: 13px;
+
     border-top: 1px solid #dfd5ce;
 
     color: #89817b;
     font-family: "DM Sans", sans-serif;
     font-size: 9px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.3px;
 }
 
-/* IMAGE */
+/* MODEL IMAGE - BLENDED WITH BACKGROUND */
 
 .ima {
-    width: 100%;
-    height: 590px;
     position: relative;
+    align-self: stretch;
+
+    width: calc(100% + 6vw);
+    min-width: 0;
+    min-height: 650px;
+
+    margin-right: -6vw;
+
     overflow: hidden;
+    background: transparent;
 }
 
 .ima img {
+    position: absolute;
+    inset: 0;
+
     width: 100%;
     height: 100%;
+
     display: block;
     object-fit: cover;
-    object-position: center 35%;
-}
+    object-position: center 25%;
 
-/* IMAGE CAPTION */
-
-.image-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 22px;
-
-    display: flex;
-    justify-content: space-between;
-
-    background: linear-gradient(
-        transparent,
-        rgba(0,0,0,0.45)
+    /* دمج الصورة مع الخلفية من الجهة اليسرى */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0.15) 12%,
+        rgba(0, 0, 0, 0.65) 27%,
+        black 43%
     );
 
-    color: white;
-    font-family: "DM Sans", sans-serif;
-    font-size: 10px;
-    letter-spacing: 2px;
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0.15) 12%,
+        rgba(0, 0, 0, 0.65) 27%,
+        black 43%
+    );
 }
 
+/* إخفاء الكتابة الموجودة فوق الصورة */
+.image-caption {
+    display: none;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (min-width: 761px) and (max-width: 1199px) {
+
+    .hero {
+        min-height: 540px;
+        padding: 0 4%;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-text {
+        padding: 35px 0;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(38px, 5vw, 55px);
+    }
+
+    .hero-text p {
+        font-size: 12px;
+    }
+
+    .hero-bottom {
+        margin-top: 35px;
+        font-size: 8px;
+    }
+
+    .ima {
+        width: calc(100% + 4vw);
+        min-height: 540px;
+        margin-right: -4vw;
+    }
+
+    .ima img {
+        object-position: center 25%;
+    }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 760px) {
+
+    .hero {
+        min-height: auto;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        padding: 40px 20px 0;
+        gap: 0;
+
+        background: #f7f0eb;
+    }
+
+    .hero-text {
+        width: 100%;
+        padding: 10px 0 25px;
+    }
+
+    .hero-label {
+        font-size: 9px;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(38px, 8vw, 53px);
+        line-height: 1.18;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-text p {
+        max-width: 100%;
+        font-size: 12px;
+        line-height: 1.9;
+        margin: 18px 0;
+    }
+
+    .butt {
+        width: 205px;
+        height: 46px;
+    }
+
+    .hero-bottom {
+        max-width: 100%;
+        margin-top: 28px;
+        font-size: 8px;
+    }
+
+    .ima {
+        position: relative;
+
+        width: calc(100% + 40px);
+        min-height: 0;
+        height: min(115vw, 500px);
+
+        margin-left: -20px;
+        margin-right: -20px;
+
+        overflow: hidden;
+    }
+
+    .ima img {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center 20%;
+
+        /* دمج أعلى الصورة مع خلفية النص */
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.35) 12%,
+            black 32%
+        );
+
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.35) 12%,
+            black 32%
+        );
+    }
+
+}
+
+/* =====================================
+   EXTRA SMALL PHONES
+===================================== */
+
+@media (max-width: 380px) {
+
+    .hero {
+        padding: 30px 15px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .ima {
+        width: calc(100% + 30px);
+        margin-left: -15px;
+        margin-right: -15px;
+        height: 115vw;
+    }
+
+}
+
+/* =====================================
+   DARK MODE HERO
+===================================== */
+
+body.dark-mode .hero {
+    background: #211c1a;
+}
+
+body.dark-mode .hero-text h1 {
+    color: #f5eee9;
+}
+
+body.dark-mode .hero-text p {
+    color: #c5b9b1;
+}
+
+body.dark-mode .hero-label,
+body.dark-mode .hero-text .meet {
+    color: #d6a58c;
+}
+
+body.dark-mode .hero-bottom {
+    color: #b9aaa0;
+    border-top-color: #493b35;
+}
 
 
 /* ================= PRODUCTS SECTION ================= */
